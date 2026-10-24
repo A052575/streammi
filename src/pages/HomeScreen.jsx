@@ -28,9 +28,9 @@ export const HomeScreen = () => {
     <div className="bg-surface text-on-surface min-h-screen flex flex-col font-body-md pb-20 md:pb-8">
       <AppHeader />
 
-      <main className="flex-1 flex flex-col relative w-full pt-16">
+      <main className="flex-1 flex flex-col relative w-full pt-14 pb-28 md:pb-12">
         {/* 1. Cinematic Hero Section */}
-        <section className="relative w-full min-h-[540px] sm:min-h-[500px] md:min-h-[540px] lg:max-h-[620px] lg:aspect-[21/9] overflow-hidden flex flex-col justify-end">
+        <section className="relative w-full min-h-[560px] sm:min-h-[500px] md:min-h-[560px] lg:max-h-[640px] overflow-hidden flex flex-col justify-end pt-16 pb-6">
           {/* Visual Backdrop */}
           <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
@@ -38,25 +38,25 @@ export const HomeScreen = () => {
           />
 
           {/* Directional Cinematic Scrims */}
-          <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent"></div>
-          <div className="absolute inset-0 bg-radial-at-c from-transparent via-surface/20 to-surface"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/75 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-radial-at-c from-transparent via-surface/30 to-surface"></div>
 
           {/* Hero Content Overlay */}
-          <div className="relative z-10 px-margin-mobile sm:px-margin pb-6 max-w-3xl flex flex-col gap-space-xs">
+          <div className="relative z-10 px-margin-mobile sm:px-margin max-w-3xl flex flex-col gap-1.5 sm:gap-2">
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-highest/80 backdrop-blur-md">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span>
-                <span className="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed">
+                <span className="font-label-sm text-[11px] uppercase tracking-widest text-primary-fixed">
                   {FEATURED_HERO.badge}
                 </span>
               </span>
-              <span className="hidden sm:inline-block font-meta-mono text-xs text-primary font-bold">
+              <span className="inline-block font-meta-mono text-xs text-primary font-bold">
                 {FEATURED_HERO.match} Match
               </span>
             </div>
 
-            <h1 className="font-display-hero-mobile sm:font-display-hero text-display-hero-mobile sm:text-display-hero text-on-primary-container font-extrabold tracking-tight drop-shadow-md uppercase leading-none">
+            <h1 className="font-display-hero-mobile sm:font-display-hero text-display-hero-mobile sm:text-display-hero text-on-primary-container font-extrabold tracking-tight drop-shadow-md uppercase leading-tight">
               {FEATURED_HERO.title}
             </h1>
 
@@ -69,7 +69,7 @@ export const HomeScreen = () => {
             />
 
             {/* Metadata Line */}
-            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-meta-mono text-meta-mono text-secondary pt-1">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-meta-mono text-meta-mono text-secondary pt-0.5 text-xs">
               <span>{FEATURED_HERO.year}</span>
               <span className="text-surface-variant">•</span>
               <span>{FEATURED_HERO.genre}</span>
@@ -83,22 +83,22 @@ export const HomeScreen = () => {
               <span className="px-1.5 py-0.2 rounded bg-surface-container text-secondary text-[10px] tracking-wider font-semibold">
                 {FEATURED_HERO.quality}
               </span>
-              <span className="text-surface-variant">•</span>
-              <span className="text-[10px] text-secondary font-semibold">{FEATURED_HERO.audio}</span>
+              <span className="text-surface-variant hidden sm:inline">•</span>
+              <span className="text-[10px] text-secondary font-semibold hidden sm:inline">{FEATURED_HERO.audio}</span>
             </div>
 
             {/* Synopsis */}
-            <p className="font-body-md text-body-md text-secondary line-clamp-2 mt-1 leading-snug max-w-xl">
+            <p className="font-body-md text-secondary line-clamp-2 mt-0.5 text-xs sm:text-sm leading-relaxed max-w-xl">
               {FEATURED_HERO.synopsis}
             </p>
 
             {/* Action Row */}
-            <div className="flex items-center gap-space-sm mt-3 flex-wrap">
+            <div className="flex items-center gap-2 mt-2 flex-wrap">
               <button
                 onClick={() => navigate('/player')}
-                className="h-11 px-6 rounded-xl bg-on-surface text-surface hover:bg-white font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-all shadow-lg shadow-black/40 glow-card"
+                className="h-10 sm:h-11 px-5 rounded-xl bg-on-surface text-surface hover:bg-white font-label-md text-xs sm:text-sm flex items-center justify-center gap-2 active:scale-95 transition-all shadow-lg shadow-black/40 glow-card"
               >
-                <span className="material-symbols-outlined text-[22px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
                   play_arrow
                 </span>
                 <span className="font-bold">Play Now</span>
@@ -106,7 +106,7 @@ export const HomeScreen = () => {
 
               <button
                 onClick={() => toggleWatchlist(FEATURED_HERO.id)}
-                className={`h-11 px-5 rounded-xl backdrop-blur-md font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-95 transition-all ${
+                className={`h-10 sm:h-11 px-4 rounded-xl backdrop-blur-md font-label-md text-xs sm:text-sm flex items-center justify-center gap-1.5 active:scale-95 transition-all ${
                   heroInWatchlist
                     ? 'bg-primary-container text-white'
                     : 'bg-surface-container-high/70 hover:bg-surface-container-high text-on-surface'
@@ -120,20 +120,20 @@ export const HomeScreen = () => {
 
               <button
                 onClick={() => setIsTrailerOpen(true)}
-                className="h-11 px-4 rounded-xl bg-surface-container-high/80 hover:bg-surface-container-highest backdrop-blur-md text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-95 transition-all border border-surface-container-highest"
+                className="h-10 sm:h-11 px-3.5 rounded-xl bg-surface-container-high/80 hover:bg-surface-container-highest backdrop-blur-md text-on-surface font-label-md text-xs sm:text-sm flex items-center justify-center gap-1.5 active:scale-95 transition-all border border-surface-container-highest"
                 title="Watch 4K Trailer"
               >
-                <span className="material-symbols-outlined text-[20px]">movie</span>
+                <span className="material-symbols-outlined text-[18px]">movie</span>
                 <span>Trailer</span>
               </button>
 
               <button
                 onClick={() => navigate('/details')}
                 aria-label="Movie Details"
-                className="w-11 h-11 rounded-xl bg-surface-container-high/70 hover:bg-surface-container-high backdrop-blur-md text-on-surface flex items-center justify-center active:scale-95 transition-all"
+                className="w-10 sm:w-11 h-10 sm:h-11 rounded-xl bg-surface-container-high/70 hover:bg-surface-container-high backdrop-blur-md text-on-surface flex items-center justify-center active:scale-95 transition-all"
                 title="View Full Details"
               >
-                <span className="material-symbols-outlined text-[20px]">info</span>
+                <span className="material-symbols-outlined text-[18px]">info</span>
               </button>
             </div>
           </div>
