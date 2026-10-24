@@ -54,7 +54,7 @@ export const MovieDetailsScreen = () => {
         )}
 
         {/* Top Cinematic Hero / Backdrop */}
-        <div className="relative w-full aspect-[4/5] sm:aspect-[16/9] max-h-[520px] overflow-hidden flex flex-col justify-between rounded-b-2xl sm:rounded-2xl sm:mt-4 shadow-2xl">
+        <div className="relative w-full min-h-[460px] sm:min-h-[480px] sm:aspect-[16/9] max-h-[540px] overflow-hidden flex flex-col justify-between rounded-b-2xl sm:rounded-2xl sm:mt-4 shadow-2xl">
           <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
             style={{ backgroundImage: `url('${FEATURED_HERO.detailsBackdrop}')` }}

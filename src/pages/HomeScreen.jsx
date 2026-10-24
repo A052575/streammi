@@ -30,7 +30,7 @@ export const HomeScreen = () => {
 
       <main className="flex-1 flex flex-col relative w-full pt-16">
         {/* 1. Cinematic Hero Section */}
-        <section className="relative w-full aspect-[16/11] sm:aspect-[21/9] max-h-[580px] overflow-hidden flex flex-col justify-end">
+        <section className="relative w-full min-h-[540px] sm:min-h-[500px] md:min-h-[540px] lg:max-h-[620px] lg:aspect-[21/9] overflow-hidden flex flex-col justify-end">
           {/* Visual Backdrop */}
           <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"

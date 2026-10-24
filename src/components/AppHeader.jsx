@@ -22,12 +22,20 @@ export const AppHeader = ({ title, showBack = false }) => {
             </button>
           )}
 
-          <Link to="/" className="flex items-center group">
-            <img
-              alt="AETHER+ OTT Logo"
-              className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105"
-              src={LOGO_URL}
-            />
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-primary-container to-[#ff4d5a] flex items-center justify-center shadow-lg shadow-primary-container/30 group-hover:scale-105 transition-transform">
+              <span className="material-symbols-outlined text-[20px] text-white" style={{ fontVariationSettings: "'FILL' 1" }}>
+                play_arrow
+              </span>
+            </div>
+            <div className="flex items-baseline tracking-tight">
+              <span className="font-extrabold text-base sm:text-lg text-white font-['Plus_Jakarta_Sans']">
+                STREAM<span className="text-primary-container">MI</span>
+              </span>
+              <span className="text-[11px] text-primary-container font-black ml-0.5">
+                +
+              </span>
+            </div>
           </Link>
 
           {title && (
@@ -94,13 +102,10 @@ export const AppHeader = ({ title, showBack = false }) => {
           <button
             onClick={() => setIsProfileOpen(true)}
             aria-label="Profile and Settings"
-            className="w-10 h-10 flex items-center justify-center rounded-full hover:ring-2 hover:ring-primary-container transition-all focus:outline-none ml-1"
+            className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary-container to-purple-600 flex items-center justify-center text-white text-xs font-bold font-meta-mono shadow-md hover:ring-2 hover:ring-primary-container transition-all ml-1"
+            title="Profile & Settings"
           >
-            <img
-              alt="Profile"
-              className="w-8 h-8 rounded-full object-cover border border-surface-container-high"
-              src={USER_AVATAR}
-            />
+            MA
           </button>
         </div>
       </div>
