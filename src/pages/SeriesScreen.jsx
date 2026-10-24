@@ -7,25 +7,56 @@ import { ALL_ITEMS } from '../data/moviesData';
 
 export const SeriesScreen = () => {
   const navigate = useNavigate();
+  const [activeFilter, setActiveFilter] = React.useState('All');
 
   const series = ALL_ITEMS.filter((item) => item.type === 'series' || item.episode);
+
+  const filtered = activeFilter === 'All'
+    ? series
+    : series.filter((s) => s.genre?.toLowerCase().includes(activeFilter.toLowerCase()));
 
   return (
     <div className="bg-surface text-on-surface min-h-screen flex flex-col font-body-md pb-20 md:pb-8">
       <AppHeader title="Prestige Series" showBack={true} />
 
       <main className="flex-1 flex flex-col relative w-full pt-20 px-margin-mobile sm:px-margin max-w-7xl mx-auto">
-        <div className="mb-6">
-          <h1 className="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">
-            Prestige Series
-          </h1>
-          <p className="font-body-md text-secondary text-sm mt-1">
-            Episodic narratives crafted with the discipline and visual grandeur of cinema.
-          </p>
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div>
+            <div className="flex items-center gap-2 mb-1">
+              <span className="px-2 py-0.5 rounded text-[10px] font-meta-mono uppercase font-bold tracking-wider bg-primary-container text-white">
+                Episodic Cinema
+              </span>
+              <span className="text-xs font-meta-mono text-secondary">
+                {filtered.length} Series Seasons
+              </span>
+            </div>
+            <h1 className="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">
+              Prestige Series
+            </h1>
+            <p className="font-body-md text-secondary text-sm mt-1">
+              Episodic narratives crafted with the discipline and visual grandeur of cinema.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+            {['All', 'Cyberpunk', 'Neo-Noir', 'Thriller'].map((f) => (
+              <button
+                key={f}
+                onClick={() => setActiveFilter(f)}
+                className={`px-3 py-1.5 rounded-full text-xs font-meta-mono uppercase tracking-wider transition-colors whitespace-nowrap ${
+                  activeFilter === f
+                    ? 'bg-primary-container text-white font-bold shadow-md'
+                    : 'bg-surface-container-high text-secondary hover:text-on-surface'
+                }`}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
-          {series.map((item) => (
+          {filtered.map((item) => (
             <div
               key={item.id}
               onClick={() => navigate('/player')}

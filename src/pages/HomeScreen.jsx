@@ -15,6 +15,8 @@ export const HomeScreen = () => {
   const navigate = useNavigate();
   const { watchlist, toggleWatchlist } = useApp();
   const [selectedGenre, setSelectedGenre] = useState(null);
+  const [isTrailerOpen, setIsTrailerOpen] = useState(false);
+  const [activeTabFilter, setActiveTabFilter] = useState('All');
 
   const heroInWatchlist = watchlist.includes(FEATURED_HERO.id);
 
@@ -114,6 +116,15 @@ export const HomeScreen = () => {
                   {heroInWatchlist ? 'check' : 'add'}
                 </span>
                 <span>{heroInWatchlist ? 'In My List' : 'My List'}</span>
+              </button>
+
+              <button
+                onClick={() => setIsTrailerOpen(true)}
+                className="h-11 px-4 rounded-xl bg-surface-container-high/80 hover:bg-surface-container-highest backdrop-blur-md text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 active:scale-95 transition-all border border-surface-container-highest"
+                title="Watch 4K Trailer"
+              >
+                <span className="material-symbols-outlined text-[20px]">movie</span>
+                <span>Trailer</span>
               </button>
 
               <button
@@ -342,6 +353,71 @@ export const HomeScreen = () => {
             Curated algorithmic streaming in uncompressed 4K Spatial Audio.
           </p>
         </footer>
+
+        {/* 4K Cinematic Trailer Modal */}
+        {isTrailerOpen && (
+          <div
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-2xl flex items-center justify-center p-4 sm:p-6 animate-fadeIn"
+            onClick={() => setIsTrailerOpen(false)}
+          >
+            <div
+              className="relative w-full max-w-4xl bg-surface-container rounded-2xl overflow-hidden border border-surface-container-highest shadow-2xl flex flex-col"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between px-5 py-3.5 bg-surface-container-low border-b border-surface-container-highest">
+                <div className="flex items-center gap-2">
+                  <span className="px-2 py-0.5 rounded bg-primary-container text-white text-[10px] font-bold tracking-widest uppercase">
+                    Official 4K Trailer
+                  </span>
+                  <span className="font-label-md text-sm font-semibold text-on-surface">
+                    {FEATURED_HERO.title}
+                  </span>
+                </div>
+                <button
+                  onClick={() => setIsTrailerOpen(false)}
+                  className="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-highest flex items-center justify-center text-secondary hover:text-on-surface transition-colors"
+                >
+                  <span className="material-symbols-outlined text-[20px]">close</span>
+                </button>
+              </div>
+
+              {/* Video Player Container */}
+              <div className="relative aspect-video w-full bg-black">
+                <video
+                  src={FEATURED_HERO.videoUrl}
+                  controls
+                  autoPlay
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* Trailer Footer Info */}
+              <div className="p-4 bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div>
+                  <h4 className="font-label-md text-sm font-semibold text-on-surface">
+                    Chronos: Zero Hour - Cinema Teaser
+                  </h4>
+                  <p className="font-meta-mono text-xs text-secondary mt-0.5">
+                    Dolby Vision • Dolby Atmos 7.1 • Directed by {FEATURED_HERO.director}
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => {
+                      setIsTrailerOpen(false);
+                      navigate('/player');
+                    }}
+                    className="px-4 py-2 rounded-xl bg-on-surface text-surface hover:bg-white text-xs font-bold font-label-md flex items-center gap-1.5 transition-all shadow-md"
+                  >
+                    <span className="material-symbols-outlined text-[16px]">play_arrow</span>
+                    <span>Play Full Movie</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <AppNavBar />

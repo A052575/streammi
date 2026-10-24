@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FEATURED_HERO } from '../data/moviesData';
+import { FEATURED_HERO, SHOPPING_LINKS } from '../data/moviesData';
 import { ShoppingLinks } from '../components/ShoppingLinks';
 
 export const PlayerScreen = () => {
@@ -403,6 +403,58 @@ export const PlayerScreen = () => {
               <p className="font-meta-mono text-[11px] text-[#777E8A]">
                 Streaming from AETHER Edge Server (Frankfurt • Latency: 14ms)
               </p>
+            </div>
+          </section>
+
+          {/* 5. IN-STREAM SCENE MERCHANDISE & OUTFITS (Amazon & Flipkart) */}
+          <section className="w-full bg-[#0E1118] px-space-md py-6 flex flex-col gap-4 border-t border-surface-container-high/40 max-w-5xl mx-auto">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <div>
+                <h3 className="font-headline-sm text-headline-sm text-[#F7F7F5]">
+                  Scene Costumes & Outfits
+                </h3>
+                <p className="font-meta-mono text-xs text-[#A3A8B3] mt-0.5">
+                  Direct shopping links for outfits worn in Chronos: Zero Hour
+                </p>
+              </div>
+              <span className="font-meta-mono text-xs text-primary px-2.5 py-1 rounded bg-[#191D26] border border-primary-container/30">
+                Live Store Links
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {SHOPPING_LINKS.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex flex-col justify-between p-3 rounded-xl bg-[#151922] border border-surface-container-high/40 hover:border-primary-container/60 transition-all"
+                >
+                  <div>
+                    <span className="text-[10px] font-meta-mono uppercase tracking-wider text-secondary">
+                      {item.category}
+                    </span>
+                    <h4 className="font-label-md text-sm text-[#F7F7F5] font-semibold mt-0.5 line-clamp-1">
+                      {item.title}
+                    </h4>
+                  </div>
+                  <div className="flex items-center justify-between mt-3 pt-2 border-t border-surface-container-high/30">
+                    <span className="text-xs font-meta-mono text-secondary">
+                      {item.store}
+                    </span>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`px-2.5 py-1 rounded text-xs font-bold underline transition-colors ${
+                        item.store === 'Amazon'
+                          ? 'text-[#FF9900] bg-[#FF9900]/10 hover:bg-[#FF9900] hover:text-black'
+                          : 'text-[#60A5FA] bg-[#2874F0]/10 hover:bg-[#2874F0] hover:text-white'
+                      }`}
+                    >
+                      {item.store} Link
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
         </div>
