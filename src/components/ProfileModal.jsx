@@ -46,7 +46,7 @@ export const ProfileModal = () => {
             <span className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-emerald-500 border-2 border-surface"></span>
           </div>
           <div>
-            <h3 className="font-headline-sm text-on-surface font-bold">Alex Vance</h3>
+            <h3 className="font-headline-sm text-on-surface font-bold">Alex walker</h3>
             <p className="font-meta-mono text-xs text-primary-fixed uppercase tracking-wider">
               Prestige Film Club • Member since 2024
             </p>
