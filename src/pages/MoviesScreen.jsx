@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { AppNavBar } from '../components/AppNavBar';
+import { ShoppingLinks } from '../components/ShoppingLinks';
 import { ALL_ITEMS, GENRES } from '../data/moviesData';
 
 export const MoviesScreen = () => {
@@ -74,6 +75,11 @@ export const MoviesScreen = () => {
                 <p className="font-meta-mono text-[11px] text-secondary mt-0.5 truncate">
                   {item.year || '2025'} • {item.genre}
                 </p>
+                <ShoppingLinks
+                  amazonUrl={item.amazonUrl}
+                  flipkartUrl={item.flipkartUrl}
+                  itemTitle={item.title}
+                />
               </div>
             </div>
           ))}

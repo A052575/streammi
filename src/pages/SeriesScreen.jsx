@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { AppNavBar } from '../components/AppNavBar';
+import { ShoppingLinks } from '../components/ShoppingLinks';
 import { ALL_ITEMS } from '../data/moviesData';
 
 export const SeriesScreen = () => {
@@ -60,6 +61,11 @@ export const SeriesScreen = () => {
                   <p className="font-meta-mono text-xs text-primary-fixed mt-0.5">
                     {item.episode}
                   </p>
+                  <ShoppingLinks
+                    amazonUrl={item.amazonUrl}
+                    flipkartUrl={item.flipkartUrl}
+                    itemTitle={item.title}
+                  />
                   <p className="font-body-md text-xs text-secondary line-clamp-2 mt-2 leading-relaxed">
                     {item.synopsis}
                   </p>

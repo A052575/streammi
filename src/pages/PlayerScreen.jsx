@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FEATURED_HERO } from '../data/moviesData';
+import { ShoppingLinks } from '../components/ShoppingLinks';
 
 export const PlayerScreen = () => {
   const navigate = useNavigate();
@@ -142,6 +143,11 @@ export const PlayerScreen = () => {
                     <span className="w-1 h-1 rounded-full bg-[#A3A8B3]"></span>
                     <span>{FEATURED_HERO.aspectRatio}</span>
                   </p>
+                  <ShoppingLinks
+                    amazonUrl={FEATURED_HERO.amazonUrl}
+                    flipkartUrl={FEATURED_HERO.flipkartUrl}
+                    itemTitle={FEATURED_HERO.title}
+                  />
                 </div>
               </div>
 

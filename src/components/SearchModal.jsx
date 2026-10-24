@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
+import { ShoppingLinks } from './ShoppingLinks';
 
 export const SearchModal = () => {
   const { isSearchOpen, setIsSearchOpen, searchQuery, setSearchQuery, allItems } = useApp();
@@ -137,6 +138,11 @@ export const SearchModal = () => {
                         </>
                       )}
                     </div>
+                    <ShoppingLinks
+                      amazonUrl={item.amazonUrl}
+                      flipkartUrl={item.flipkartUrl}
+                      itemTitle={item.title}
+                    />
                   </div>
                 </div>
 

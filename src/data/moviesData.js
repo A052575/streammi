@@ -4,6 +4,58 @@ export const USER_AVATAR = "https://lh3.googleusercontent.com/aida-public/AB6AXu
 // Big open-source cinematic clips for high-definition playback demonstration
 export const SAMPLE_VIDEO_URL = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4";
 
+// Curated clothing & merchandise links (Amazon & Flipkart)
+export const SHOPPING_LINKS = [
+  {
+    id: "amz-1",
+    store: "Amazon",
+    title: "DEELMO Stylish Button-Down Shirt",
+    shortName: "DEELMO Shirt",
+    category: "Men's Fashion",
+    url: "https://www.amazon.in/DEELMO-Stylish-Button-Down-Comfortable-Breathable/dp/B0FXRWCN5S/ref=sr_1_6?crid=39RVUF6WLD1AX&dib=eyJ2IjoiMSJ9.79yWFnOu7LWcG9ByspZtu0-6hMbvWGwGbeXHEjGdkWV9fKwiPfr2z0A6v_E7sD77KspBJrprUNti_IuO4tNWWYU-gdBSPUGLB_zYl_8a5lfU6bXaFIQQ8JkcZ7rwzB8dMgJzV6ptQc1eXfcPZWisSwUPIl9cFVTIjWgbe519Hu-FLp3TTuRcH8KQceNRFaY3zZdzWtg1L48hzAWOHahHWthwcrUu9nYopbOSxFqgAlxAPCkVD67n7HzaIqSvA3Ey7SA_4hZqZuxp_QnZMKyB84vAFwUInB_RypMKfE1sMTk.IBg_22VEBLOWNPkL4U5aEc3cnsThfgl7bX37rmLkonw&dib_tag=se&keywords=clothes%2Bfor%2Bmen&qid=1792844977&s=apparel&sprefix=cloth%2Cfashion%2C283&sr=1-6&th=1&psc=1"
+  },
+  {
+    id: "amz-2",
+    store: "Amazon",
+    title: "Leriya Fashion Regular Shirt",
+    shortName: "Leriya Shirt",
+    category: "Casual Wear",
+    url: "https://www.amazon.in/Leriya-Fashion-Regular-Shirt-LF-MS-6257_Brown/dp/B0DMSY9C5N/ref=sxin_14_pa_sp_search_thematic_sspa?content-id=amzn1.sym.e56084ea-0096-4303-b5e6-9e157bd6cb3b%3Aamzn1.sym.e56084ea-0096-4303-b5e6-9e157bd6cb3b&crid=39RVUF6WLD1AX&cv_ct_cx=clothes+for+men&keywords=clothes+for+men&pd_rd_i=B0DMSY9C5N&pd_rd_r=13938ca2-6859-4e8c-b3a7-88aaaf6eac91&pd_rd_w=Ttdp9&pd_rd_wg=PR3F2&pf_rd_p=e56084ea-0096-4303-b5e6-9e157bd6cb3b&pf_rd_r=7SWG07SQAJTTKQ1AEV9X&qid=1792844977&s=apparel&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=cloth%2Cfashion%2C283&sr=1-3-883a54c7-f466-4d42-997c-6d482a360a1a-spons&aref=QXw9XsiO7V&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&psc=1"
+  },
+  {
+    id: "amz-3",
+    store: "Amazon",
+    title: "KOTTY Regular Distressed Jeans",
+    shortName: "KOTTY Jeans",
+    category: "Denim & Pants",
+    url: "https://www.amazon.in/KOTTY-Regular-Distressed-Fashionable-Trendy/dp/B0DWJXXT3Q/ref=sr_1_16?crid=39RVUF6WLD1AX&dib=eyJ2IjoiMSJ9.79yWFnOu7LWcG9ByspZtu0-6hMbvWGwGbeXHEjGdkWV9fKwiPfr2z0A6v_E7sD77KspBJrprUNti_IuO4tNWWYU-gdBSPUGLB_zYl_8a5lfU6bXaFIQQ8JkcZ7rwzB8dMgJzV6ptQc1eXfcPZWisSwUPIl9cFVTIjWgbe519Hu-FLp3TTuRcH8KQceNRFaY3zZdzWtg1L48hzAWOHahHWthwcrUu9nYopbOSxFqgAlxAPCkVD67n7HzaIqSvA3Ey7SA_4hZqZuxp_QnZMKyB84vAFwUInB_RypMKfE1sMTk.IBg_22VEBLOWNPkL4U5aEc3cnsThfgl7bX37rmLkonw&dib_tag=se&keywords=clothes+for+men&qid=1792844977&s=apparel&sprefix=cloth%2Cfashion%2C283&sr=1-16"
+  },
+  {
+    id: "amz-4",
+    store: "Amazon",
+    title: "BULLMER Cotton Trendy Co-Ords",
+    shortName: "BULLMER Co-Ords",
+    category: "Co-Ords Set",
+    url: "https://www.amazon.in/BULLMER-Cotton-Clothing-Trendy-Co-Ords/dp/B0D1CJV7FD/ref=sr_1_30?crid=39RVUF6WLD1AX&dib=eyJ2IjoiMSJ9.79yWFnOu7LWcG9ByspZtu0-6hMbvWGwGbeXHEjGdkWV9fKwiPfr2z0A6v_E7sD77KspBJrprUNti_IuO4tNWWYU-gdBSPUGLB_zYl_8a5lfU6bXaFIQQ8JkcZ7rwzB8dMgJzV6ptQc1eXfcPZWisSwUPIl9cFVTIjWgbe519Hu-FLp3TTuRcH8KQceNRFaY3zZdzWtg1L48hzAWOHahHWthwcrUu9nYopbOSxFqgAlxAPCkVD67n7HzaIqSvA3Ey7SA_4hZqZuxp_QnZMKyB84vAFwUInB_RypMKfE1sMTk.IBg_22VEBLOWNPkL4U5aEc3cnsThfgl7bX37rmLkonw&dib_tag=se&keywords=clothes+for+men&qid=1792844977&s=apparel&sprefix=cloth%2Cfashion%2C283&sr=1-30"
+  },
+  {
+    id: "fk-1",
+    store: "Flipkart",
+    title: "Threadhunter Men Pyjama",
+    shortName: "Threadhunter Pyjama",
+    category: "Loungewear",
+    url: "https://www.flipkart.com/threadhunter-clothes-indi-men-pyjama/p/itma6f762a49b975?pid=PYJHRCCQR7PBQT5D&marketplace=FLIPKART&ov_redirect=true"
+  },
+  {
+    id: "fk-2",
+    store: "Flipkart",
+    title: "Vebnor Solid Casual Grey Shirt",
+    shortName: "Vebnor Grey Shirt",
+    category: "Casual Shirt",
+    url: "https://www.flipkart.com/vebnor-men-solid-casual-grey-shirt/p/itmfbb7c9d433df3?pid=SHTFZFTGEHZFXB3D&lid=LSTSHTFZFTGEHZFXB3D2BBWXN&marketplace=FLIPKART&store=clo%2Fash%2Faxc%2Fmmk%2Fkp7&srno=b_1_40&otracker=browse&fm=Search&iid=e37092b9-297b-4c8b-a206-8c1f9885ed13.SHTFZFTGEHZFXB3D.SEARCH&ppt=browse&ppn=browse&ssid=fbntjaa4tc0000001792845227806&ov_redirect=true"
+  }
+];
+
 export const FEATURED_HERO = {
   id: "chronos-zero-hour",
   title: "CHRONOS: ZERO HOUR",
@@ -21,6 +73,8 @@ export const FEATURED_HERO = {
   audio: "DOLBY ATMOS 7.1",
   aspectRatio: "2.39:1",
   videoUrl: SAMPLE_VIDEO_URL,
+  amazonUrl: "https://www.amazon.in/DEELMO-Stylish-Button-Down-Comfortable-Breathable/dp/B0FXRWCN5S/ref=sr_1_6?crid=39RVUF6WLD1AX&dib=eyJ2IjoiMSJ9.79yWFnOu7LWcG9ByspZtu0-6hMbvWGwGbeXHEjGdkWV9fKwiPfr2z0A6v_E7sD77KspBJrprUNti_IuO4tNWWYU-gdBSPUGLB_zYl_8a5lfU6bXaFIQQ8JkcZ7rwzB8dMgJzV6ptQc1eXfcPZWisSwUPIl9cFVTIjWgbe519Hu-FLp3TTuRcH8KQceNRFaY3zZdzWtg1L48hzAWOHahHWthwcrUu9nYopbOSxFqgAlxAPCkVD67n7HzaIqSvA3Ey7SA_4hZqZuxp_QnZMKyB84vAFwUInB_RypMKfE1sMTk.IBg_22VEBLOWNPkL4U5aEc3cnsThfgl7bX37rmLkonw&dib_tag=se&keywords=clothes%2Bfor%2Bmen&qid=1792844977&s=apparel&sprefix=cloth%2Cfashion%2C283&sr=1-6&th=1&psc=1",
+  flipkartUrl: "https://www.flipkart.com/threadhunter-clothes-indi-men-pyjama/p/itma6f762a49b975?pid=PYJHRCCQR7PBQT5D&marketplace=FLIPKART&ov_redirect=true",
   backdrop: "https://lh3.googleusercontent.com/aida-public/AB6AXuA6c1GEZfRgqHDtTbohBk_Z1QgAbzCq2e6FePc3SlBBafGADu0FVYAb-Pzy7iJMajbZFZ9S_hMETYhytrN-2-a9P3Fx2AAfBE87ddKmUAQDSwgoWYcTEbS7uQkf9oeE88W0bIFyhtsPLvznFzeMzr5WXZ01UQsjvzQKT2ntrv94fxk2vK00KCkd587UU5-eteAqmlVTH9rp0XVbJt1HVJKoZ0F4Mp3ji9IJg8RNDAsYvl06GrQtCb0d8Q",
   detailsBackdrop: "https://lh3.googleusercontent.com/aida-public/AB6AXuCiPDDh2kdI1raYIb2uiNMX0LSHyUygqv1ciuHaWbAaa4uuzY9tuqRmMkJU4j2b90TtBEO7bHNUJEXcaUWGn1ihBqQ7XV4i2i65CLdeQu_Po38WHpqhc3U3sCQWruCnKu-xCqYe8_0fWiIM5CuA7Rnn8iay-587EcM4zsKM7Hg4iW3D-nsLT3EhHrGPb_O8YEbwD7hM0tuAYUYxI8TrOVeHxiFweHfFN7b2nS3LVDiZGmpP7uLmWpItfg",
   playerBackdrop: "https://lh3.googleusercontent.com/aida-public/AB6AXuDuMwZ5QwqBpiRF_JuFC8OsRXCNG8YFzO37NbgnzXzoi-tD8u01f6AtcTYRi3zBKkFLeOKsNG2lb42CfGW7iEid2KsHD4DDLMA4tcwAr2SM2v4gfHrQWyYhrLdhl4yLsh_HHS-lJFGWWfi5WAE82gxgSjxHXF8W878FkVpkdZbTLn7_GsnszJYJqJncF8rQlG2iwfgTowkx3U6aAyzJzXr4wgb7WFF49uhbpZJFXWO3qs_IbBx5I-7m2g",
@@ -138,6 +192,8 @@ export const CONTINUE_WATCHING = [
     match: "97%",
     year: "2024",
     quality: "4K HDR",
+    amazonUrl: SHOPPING_LINKS[1].url,
+    flipkartUrl: SHOPPING_LINKS[5].url,
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCytamDZttBfTKU3LWV4POB9i0Mmr-T3NKRDsxo2ORpF7LCL6YPy6Q7sjaBAM1RZ7ESNR68rN42hFog9W1lOLDZWiSWj5Kux7GPHNdflnfavSND_jxpJq4MnP8vdnWetmlcdcPoYp2Cd7798LU2YIwAYj2ZrwXrRgdqNkobqgGZCcmToKF8IdHLSCXmjYsQ4kNEo_o8U54H_9RlVIsNBDzHr4-dV13nbXYpCZc08agNkIh469HBVdWt9g",
     synopsis: "A clandestine cyber operative sits inside an analog server vault lit by blinking amber relays and monochromatic CRT monitors to trace an encrypted black market satellite."
   },
@@ -152,6 +208,8 @@ export const CONTINUE_WATCHING = [
     match: "93%",
     year: "2024",
     quality: "4K UHD",
+    amazonUrl: SHOPPING_LINKS[2].url,
+    flipkartUrl: SHOPPING_LINKS[4].url,
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBPXIyqFjIgaeRo8V3YMabB-Rfxm1gBepA58vI3U265iC_jLlJn03ct8_wEItXRP0VeVlelyjh6zGP3IGyYGbxuuN1Gc0jP33S8nNDlCVRyOiXuNgkLDdylsKiApsX8e_OiXCK3IFsSohARrBC32YAKtYQvOHwk_kDi0F2CvOIxZQSAgwgjGh_7tSzz6olHAfzHtx5fUSaXv8yDj0UMNauJNGHDJ1JcQkTT3t8IYcNXUikId0GpjSC6aA",
     synopsis: "An astronaut gazing out of an observation cupola toward the vast icy rings of Saturn uncovers an acoustic signature pulsating beneath the rings."
   },
@@ -166,6 +224,8 @@ export const CONTINUE_WATCHING = [
     match: "99%",
     year: "2025",
     quality: "Dolby Vision",
+    amazonUrl: SHOPPING_LINKS[3].url,
+    flipkartUrl: SHOPPING_LINKS[5].url,
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBoLDOWiSuez7SWT9u4_1GKKAZAM8KzmyWMIDxqDdTBd3AWmtSY4OFQm9ehXSXFBqtuD9mTphE9F0hlj4z_KOBiaQWvN_qTf4CcllZwVV7m62cFg--hlkt244W9DUHbAQIuZ3oAHtURC9A_J14q645rIfb1N-sGil0pNz7wFYntqQ8WiRcZdQPkW6SqSWmEG_bbV-LhLoZ7D1GexA28e337-KYu9WBHLpwCVglOqaX38qM-l-AjRhnI7g",
     synopsis: "Wet Shinjuku alleyways reflect vivid neon signs as a weary detective tracks an enigmatic phantom syndicate through the torrential rain."
   }
@@ -181,6 +241,8 @@ export const TRENDING_MOVIES = [
     match: "98%",
     duration: "2h 11m",
     quality: "4K HDR",
+    amazonUrl: SHOPPING_LINKS[0].url,
+    flipkartUrl: SHOPPING_LINKS[4].url,
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDeedGgu0YWgQpvJtNXHIXlv-zinMheY1G1Hwcvc_Dmv3IDfF64R5lutvzR3jW6dkbfsitoBoBQ9_85kWHWAuLPFcY6079Q6WMU_9K7ri52kyQzcL08yW76s2blcv9W4YcbliKebuvLUQuTy0MxboE8DIfJpxNKzoOe0L8h-eJpv-0ZAqPUxZYFoIAaqYMN_Blo1vsAiRvp600--Cyd9_AVWALpBL-EGgOz89fEMSv1g4PdN5j39hWivg",
     synopsis: "Deep sea deep space anomaly discovery expedition pushing human comprehension past the brink."
   },
@@ -193,6 +255,8 @@ export const TRENDING_MOVIES = [
     match: "95%",
     duration: "1h 54m",
     quality: "Dolby Vision",
+    amazonUrl: SHOPPING_LINKS[1].url,
+    flipkartUrl: SHOPPING_LINKS[5].url,
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAjUY_dT-hYneKkUcCpiLZfHwNFbBpW_ZAyUfGV5xgpvjVIHn9t69IK2WHSnpnAUB0Aq-0mqeq36eW_j4QHTKq1rqBKjyFybzJzQCIyLP00BMQk652xsRlGoNRY-MXyzP2P1pbrRZBZ5FXFNUgdwY5x3HmxruC1BwAmr2AEIwyneXVEH3Ch8tTToU11yR3GB6Ddpnn6Jd6xjikY5vxcJUbhvRfiOiW6bQhd30Y9mKQJGQc6m7lzojF5qQ",
     synopsis: "A high-altitude atmospheric orbital laboratory battles an unexpected gravitational wave disturbance."
   },
@@ -205,6 +269,8 @@ export const TRENDING_MOVIES = [
     match: "96%",
     duration: "2h 18m",
     quality: "4K UHD",
+    amazonUrl: SHOPPING_LINKS[2].url,
+    flipkartUrl: SHOPPING_LINKS[4].url,
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDh29d7EyPruKLbrwzCkSlnigE3yHufZcrTCxwD_8Hcs6xbKb8260Crl6ZxQ_M0_Bskmh2utIb162Fxrj6EwqleVe_BBs9hu7QybOJcpjTAwbl-7DcjI_AFP5d_Ljy5sIu5MvspLvcGBH2W2Vss0J62a-3140UpDlj02BztMMXfx_JtxV_6OqGExjJ7tf3lqid0Qrr9S_ooL9BT7hieJwM5iWpgIRSnM9rgniV9D7tfR4C6mP4FT4nog",
     synopsis: "A planetary ocean capable of physical memory projection causes hallucinations among isolated researchers."
   },
@@ -217,6 +283,8 @@ export const TRENDING_MOVIES = [
     match: "94%",
     duration: "1h 58m",
     quality: "Dolby Atmos",
+    amazonUrl: SHOPPING_LINKS[3].url,
+    flipkartUrl: SHOPPING_LINKS[5].url,
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDDffwE7e65RA2KcsqU7WuIiHuBs1wpx-gzw5SsIM_8OMJTACXsT4ddXp3zcz8QO1KDGNEIzmR1ltXHVFQ0HHbQrd5-X10N5nK5mCHQFCqc-B4oRGoTxPCKKK9BNhZ4HhNJURu-yk-a30Jc90cBFQqKL6WdI6pbfLVAhoDPpf9XMLbxNXKI7IgQ_oxSH3N_uDXSET1AlE9qiRcGOam-HUxh_Rd6M_iwE38wiF21bHFEg_iXK7bBwvP2mQ",
     synopsis: "Every action triggers a reversed reaction in this cerebral puzzle box thriller."
   }

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { AppNavBar } from '../components/AppNavBar';
-import { FEATURED_HERO } from '../data/moviesData';
+import { FEATURED_HERO, SHOPPING_LINKS } from '../data/moviesData';
+import { ShoppingLinks } from '../components/ShoppingLinks';
 import { useApp } from '../context/AppContext';
 
 export const MovieDetailsScreen = () => {
@@ -102,6 +103,14 @@ export const MovieDetailsScreen = () => {
               CHRONOS:<br />
               <span className="text-secondary-fixed">ZERO HOUR</span>
             </h1>
+
+            {/* Shopping & Merch Links */}
+            <ShoppingLinks
+              amazonUrl={FEATURED_HERO.amazonUrl}
+              flipkartUrl={FEATURED_HERO.flipkartUrl}
+              itemTitle={FEATURED_HERO.title}
+              variant="hero"
+            />
             <div className="flex items-center flex-wrap gap-x-space-sm gap-y-1 font-meta-mono text-meta-mono text-secondary pt-space-xs">
               <span className="text-primary font-bold">{FEATURED_HERO.match} Match</span>
               <span>{FEATURED_HERO.year}</span>
@@ -271,6 +280,47 @@ export const MovieDetailsScreen = () => {
                     </span>
                   </div>
                 ))}
+              </div>
+
+              {/* Shop In-Movie Outfits Section */}
+              <div className="mt-space-lg">
+                <div className="flex items-center justify-between mb-space-sm">
+                  <div className="flex items-center gap-2">
+                    <h2 className="font-headline-sm text-headline-sm text-on-surface">
+                      Featured Outfits & Merchandise Links
+                    </h2>
+                  </div>
+                  <span className="text-xs font-meta-mono text-secondary">Amazon & Flipkart</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                  {SHOPPING_LINKS.map((item) => (
+                    <a
+                      key={item.id}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container border border-surface-container-high/40 hover:border-primary-container/50 transition-all group shadow-sm"
+                    >
+                      <div className="flex flex-col min-w-0 pr-2">
+                        <span className="font-label-md text-sm text-on-surface font-semibold group-hover:text-primary transition-colors truncate">
+                          {item.title}
+                        </span>
+                        <span className="text-xs font-meta-mono text-secondary">
+                          {item.category}
+                        </span>
+                      </div>
+                      <span
+                        className={`shrink-0 inline-flex items-center px-2 py-1 rounded text-xs font-bold underline ${
+                          item.store === 'Amazon'
+                            ? 'text-[#FF9900]'
+                            : 'text-[#3B82F6]'
+                        }`}
+                      >
+                        {item.store} Link
+                      </span>
+                    </a>
+                  ))}
+                </div>
               </div>
 
               {/* Bonus Featurettes Preview */}

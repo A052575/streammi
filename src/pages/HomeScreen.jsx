@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { AppNavBar } from '../components/AppNavBar';
+import { ShoppingLinks } from '../components/ShoppingLinks';
 import {
   FEATURED_HERO,
   CONTINUE_WATCHING,
@@ -56,6 +57,14 @@ export const HomeScreen = () => {
             <h1 className="font-display-hero-mobile sm:font-display-hero text-display-hero-mobile sm:text-display-hero text-on-primary-container font-extrabold tracking-tight drop-shadow-md uppercase leading-none">
               {FEATURED_HERO.title}
             </h1>
+
+            {/* Shopping & Merch Links */}
+            <ShoppingLinks
+              amazonUrl={FEATURED_HERO.amazonUrl}
+              flipkartUrl={FEATURED_HERO.flipkartUrl}
+              itemTitle={FEATURED_HERO.title}
+              variant="hero"
+            />
 
             {/* Metadata Line */}
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-meta-mono text-meta-mono text-secondary pt-1">
@@ -177,6 +186,11 @@ export const HomeScreen = () => {
                   <p className="font-meta-mono text-[11px] text-secondary truncate">
                     {item.episode}
                   </p>
+                  <ShoppingLinks
+                    amazonUrl={item.amazonUrl}
+                    flipkartUrl={item.flipkartUrl}
+                    itemTitle={item.title}
+                  />
                 </div>
               </div>
             ))}
@@ -233,6 +247,11 @@ export const HomeScreen = () => {
                     <span>•</span>
                     <span className="truncate">{movie.genre}</span>
                   </div>
+                  <ShoppingLinks
+                    amazonUrl={movie.amazonUrl}
+                    flipkartUrl={movie.flipkartUrl}
+                    itemTitle={movie.title}
+                  />
                 </div>
               </div>
             ))}

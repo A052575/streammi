@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { AppNavBar } from '../components/AppNavBar';
+import { ShoppingLinks } from '../components/ShoppingLinks';
 import { useApp } from '../context/AppContext';
 
 export const MyListScreen = () => {
@@ -97,6 +98,11 @@ export const MyListScreen = () => {
                     <p className="font-meta-mono text-[11px] text-secondary mt-0.5 truncate">
                       {item.year || '2025'} • {item.genre}
                     </p>
+                    <ShoppingLinks
+                      amazonUrl={item.amazonUrl}
+                      flipkartUrl={item.flipkartUrl}
+                      itemTitle={item.title}
+                    />
                   </div>
 
                   <div className="flex items-center justify-between pt-3 mt-2 border-t border-surface-container-high/30">
