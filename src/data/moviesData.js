@@ -2,7 +2,9 @@ export const LOGO_URL = "https://lh3.googleusercontent.com/aida/AEtjO1V0C1aEPuWa
 export const USER_AVATAR = "https://lh3.googleusercontent.com/aida-public/AB6AXuBx9c9m3fctquUsW2oF8KDzcpRqTTLo4HC9kaSXgJhVuksHagLyc1-noFQ-VIGSaOj44YwatCtb0oVgU6wVHwkfSApceDqBpzMyu62Uqb7jkPfSasxgIkqUg3ESDc2vARbc7gbv4bb61zmyPJEtlJyxRygPf0FHFVxdG42jUBofKxHMDjeF62gOd4iEdsduJlDUUYpFtguFspEVIYWLwYuJMJknCy36GA5k0mPT441TyIXyLDWhrqEcVA";
 
 // Big open-source cinematic clips for high-definition playback demonstration
-export const SAMPLE_VIDEO_URL = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4";
+export const SAMPLE_VIDEO_URL = "/videos/streammi_teaser.mp4";
+export const BACKUP_VIDEO_URL = "https://media.w3.org/2010/05/sintel/trailer.mp4";
+export const FALLBACK_POSTER = "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80";
 
 // Curated clothing & merchandise links (Amazon & Flipkart)
 export const SHOPPING_LINKS = [
@@ -271,7 +273,8 @@ export const TRENDING_MOVIES = [
     quality: "4K UHD",
     amazonUrl: SHOPPING_LINKS[2].url,
     flipkartUrl: SHOPPING_LINKS[4].url,
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDh29d7EyPruKLbrwzCkSlnigE3yHufZcrTCxwD_8Hcs6xbKb8260Crl6ZxQ_M0_Bskmh2utIb162Fxrj6EwqleVe_BBs9hu7QybOJcpjTAwbl-7DcjI_AFP5d_Ljy5sIu5MvspLvcGBH2W2Vss0J62a-3140UpDlj02BztMMXfx_JtxV_6OqGExjJ7tf3lqid0Qrr9S_ooL9BT7hieJwM5iWpgIRSnM9rgniV9D7tfR4C6mP4FT4nog",
+    // Repaired high-performance poster URL (replaces expired 400 link)
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
     synopsis: "A planetary ocean capable of physical memory projection causes hallucinations among isolated researchers."
   },
   {
@@ -287,6 +290,309 @@ export const TRENDING_MOVIES = [
     flipkartUrl: SHOPPING_LINKS[5].url,
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDDffwE7e65RA2KcsqU7WuIiHuBs1wpx-gzw5SsIM_8OMJTACXsT4ddXp3zcz8QO1KDGNEIzmR1ltXHVFQ0HHbQrd5-X10N5nK5mCHQFCqc-B4oRGoTxPCKKK9BNhZ4HhNJURu-yk-a30Jc90cBFQqKL6WdI6pbfLVAhoDPpf9XMLbxNXKI7IgQ_oxSH3N_uDXSET1AlE9qiRcGOam-HUxh_Rd6M_iwE38wiF21bHFEg_iXK7bBwvP2mQ",
     synopsis: "Every action triggers a reversed reaction in this cerebral puzzle box thriller."
+  }
+];
+
+// Top 10 in India Today / Global Leaderboard (Rich Numbered OTT Cards)
+export const TOP_10_MOVIES = [
+  {
+    rank: 1,
+    id: "chronos-zero-hour",
+    title: "Chronos: Zero Hour",
+    category: "Sci-Fi Action",
+    year: "2025",
+    rating: "18+",
+    match: "99%",
+    duration: "2h 24m",
+    quality: "4K HDR",
+    image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80",
+    badge: "Most Watched",
+    amazonUrl: SHOPPING_LINKS[0].url,
+    flipkartUrl: SHOPPING_LINKS[4].url
+  },
+  {
+    rank: 2,
+    id: "the-obsidian-protocol",
+    title: "The Obsidian Protocol",
+    category: "Cyberpunk Series",
+    year: "2024",
+    rating: "16+",
+    match: "97%",
+    duration: "Season 2",
+    quality: "Dolby Vision",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+    badge: "Trending #2",
+    amazonUrl: SHOPPING_LINKS[1].url,
+    flipkartUrl: SHOPPING_LINKS[5].url
+  },
+  {
+    rank: 3,
+    id: "solitude-9",
+    title: "Solitude 9",
+    category: "Deep Space",
+    year: "2024",
+    rating: "13+",
+    match: "94%",
+    duration: "1h 48m",
+    quality: "4K UHD",
+    image: "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=800&q=80",
+    badge: "High Acclaim",
+    amazonUrl: SHOPPING_LINKS[2].url,
+    flipkartUrl: SHOPPING_LINKS[4].url
+  },
+  {
+    rank: 4,
+    id: "tokyo-neon-noir",
+    title: "Tokyo Neon Noir",
+    category: "Neo-Noir Crime",
+    year: "2025",
+    rating: "18+",
+    match: "98%",
+    duration: "Season 1",
+    quality: "4K Atmos",
+    image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+    badge: "New Episodes",
+    amazonUrl: SHOPPING_LINKS[3].url,
+    flipkartUrl: SHOPPING_LINKS[5].url
+  },
+  {
+    rank: 5,
+    id: "anomalous",
+    title: "Anomalous",
+    category: "Abyssal Thriller",
+    year: "2024",
+    rating: "16+",
+    match: "95%",
+    duration: "2h 11m",
+    quality: "4K HDR",
+    image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+    badge: "Fan Favorite",
+    amazonUrl: SHOPPING_LINKS[0].url,
+    flipkartUrl: SHOPPING_LINKS[4].url
+  },
+  {
+    rank: 6,
+    id: "station-geneva",
+    title: "Station Geneva",
+    category: "Survival Mystery",
+    year: "2023",
+    rating: "16+",
+    match: "92%",
+    duration: "1h 54m",
+    quality: "Dolby Vision",
+    image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80",
+    badge: "Top Rated",
+    amazonUrl: SHOPPING_LINKS[1].url,
+    flipkartUrl: SHOPPING_LINKS[5].url
+  },
+  {
+    rank: 7,
+    id: "solaris-echo",
+    title: "Solaris Echo",
+    category: "Atmospheric Sci-Fi",
+    year: "2023",
+    rating: "13+",
+    match: "96%",
+    duration: "2h 18m",
+    quality: "4K UHD",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+    badge: "Director's Pick",
+    amazonUrl: SHOPPING_LINKS[2].url,
+    flipkartUrl: SHOPPING_LINKS[4].url
+  },
+  {
+    rank: 8,
+    id: "quantum-paradox",
+    title: "Quantum Paradox",
+    category: "Mind Bender",
+    year: "2025",
+    rating: "16+",
+    match: "91%",
+    duration: "2h 05m",
+    quality: "4K HDR",
+    image: "https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&w=800&q=80",
+    badge: "Critique Choice",
+    amazonUrl: SHOPPING_LINKS[3].url,
+    flipkartUrl: SHOPPING_LINKS[5].url
+  },
+  {
+    rank: 9,
+    id: "shadow-architect",
+    title: "The Shadow Architect",
+    category: "Conspiracy",
+    year: "2024",
+    rating: "18+",
+    match: "89%",
+    duration: "1h 49m",
+    quality: "Dolby Atmos",
+    image: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=800&q=80",
+    badge: "Staff Selection",
+    amazonUrl: SHOPPING_LINKS[0].url,
+    flipkartUrl: SHOPPING_LINKS[4].url
+  },
+  {
+    rank: 10,
+    id: "neon-genesis",
+    title: "Neon Horizon: 2099",
+    category: "Cyber Action",
+    year: "2025",
+    rating: "16+",
+    match: "93%",
+    duration: "2h 30m",
+    quality: "4K UHD",
+    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80",
+    badge: "Rising Fast",
+    amazonUrl: SHOPPING_LINKS[1].url,
+    flipkartUrl: SHOPPING_LINKS[5].url
+  }
+];
+
+// STREAMMI+ Originals (Exclusive Big-Screen Wide Cards)
+export const STREAMMI_ORIGINALS = [
+  {
+    id: "orig-1",
+    title: "VORTEX: BEYOND CAUSALITY",
+    tagline: "Time does not heal. It rewrites.",
+    genre: "Hard Sci-Fi • Psychological",
+    runtime: "Limited Series • 8 Episodes",
+    quality: "4K HDR • IMAX Enhanced",
+    backdrop: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    badge: "Original Series",
+    director: "Cary Joji Fukunaga",
+    match: "99%"
+  },
+  {
+    id: "orig-2",
+    title: "THE SILENT HORIZON",
+    tagline: "The last colony ship was never lost. It was hidden.",
+    genre: "Space Odyssey • Mystery",
+    runtime: "Feature Film • 2h 38m",
+    quality: "Dolby Vision • Atmos 7.1",
+    backdrop: "https://images.unsplash.com/photo-1509281373149-e957c6296406?auto=format&fit=crop&w=1200&q=80",
+    badge: "Original Film",
+    director: "Alex Garland",
+    match: "96%"
+  },
+  {
+    id: "orig-3",
+    title: "CIPHER REALMS",
+    tagline: "In the shadow of digital oligarchs, memory is contraband.",
+    genre: "Cyberpunk Action",
+    runtime: "Series • Season 1 Available",
+    quality: "4K Ultra HD • High Frame Rate",
+    backdrop: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    badge: "AETHER+ Premiere",
+    director: "Guillermo del Toro",
+    match: "95%"
+  }
+];
+
+// Critically Acclaimed & Festival Winners
+export const AWARD_WINNERS = [
+  {
+    id: "award-1",
+    title: "Aperture of the Soul",
+    award: "Palme d'Or Winner • Cannes",
+    score: "98% Rotten Tomatoes",
+    criterionRating: "9.4 Index",
+    year: "2024",
+    duration: "2h 08m",
+    genre: "Art-House Drama",
+    image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80",
+    synopsis: "An elderly Kyoto lacquer artisan faces the encroaching synthetic world while attempting his final masterpiece."
+  },
+  {
+    id: "award-2",
+    title: "Sub-Zero Descent",
+    award: "Best Cinematography • Venice Biennale",
+    score: "96% Metacritic",
+    criterionRating: "9.1 Index",
+    year: "2023",
+    duration: "1h 52m",
+    genre: "Arctic Thriller",
+    image: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=800&q=80",
+    synopsis: "A team of glaciologists discovers an unmapped tectonic trench releasing pressurized prehistoric gas."
+  },
+  {
+    id: "award-3",
+    title: "Echoes of the Red Giant",
+    award: "Best Sound Design • BAFTA 2024",
+    score: "95% Audience Score",
+    criterionRating: "8.9 Index",
+    year: "2024",
+    duration: "2h 15m",
+    genre: "Epic Sci-Fi",
+    image: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=800&q=80",
+    synopsis: "Humanity's last stellar probe transmits musical harmonic pulses from the rim of a dying star."
+  },
+  {
+    id: "award-4",
+    title: "Monolith & Mirage",
+    award: "Grand Jury Prize • Sundance",
+    score: "97% Certified Fresh",
+    criterionRating: "9.3 Index",
+    year: "2025",
+    duration: "1h 46m",
+    genre: "Psychological Mystery",
+    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80",
+    synopsis: "In the Atacama desert, astronomers document an impossible dark monolith defying radio telescope arrays."
+  }
+];
+
+// Binge-Worthy Multi-Season Series
+export const BINGE_SERIES = [
+  {
+    id: "series-1",
+    title: "Sector 7: Protocol",
+    seasons: "3 Seasons • 26 Episodes",
+    quality: "4K HDR",
+    match: "99%",
+    genre: "Techno-Thriller",
+    rating: "18+",
+    image: "https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&w=800&q=80",
+    synopsis: "A global AI surveillance grid begins making decisions that political authorities can neither predict nor override."
+  },
+  {
+    id: "series-2",
+    title: "Subterranean Pulse",
+    seasons: "2 Seasons • 16 Episodes",
+    quality: "Dolby Vision",
+    match: "96%",
+    genre: "Dark Mystery",
+    rating: "16+",
+    image: "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=800&q=80",
+    synopsis: "Deep underground beneath London, an abandoned subway line echoes with transmissions from sixty years ago."
+  },
+  {
+    id: "series-3",
+    title: "Solar Winds of Mars",
+    seasons: "1 Season • 10 Episodes",
+    quality: "4K UHD",
+    match: "94%",
+    genre: "Space Drama",
+    rating: "13+",
+    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80",
+    synopsis: "The pioneers of Mars Terraforming Station 4 encounter unexpected microbiological blooms in frozen aquifers."
+  }
+];
+
+// Streaming FAQs
+export const STREAMING_FAQS = [
+  {
+    q: "What makes STREAMMI+ 4K playback ultra lightweight and fast?",
+    a: "We utilize dynamic adaptive bitrate streaming with edge-cached CDN delivery and smart media pre-caching. Even on modest mobile data connections, video playback initiates in under 150 milliseconds with uncompromised clarity."
+  },
+  {
+    q: "What devices are supported for 4K Dolby Atmos streaming?",
+    a: "STREAMMI+ works seamlessly across Smart TVs (Samsung, LG, Sony, Android TV, Apple TV, FireTV Stick), desktop browsers (Chrome, Edge, Safari), tablets, and iOS/Android smartphones."
+  },
+  {
+    q: "Can I download movies and series for offline viewing?",
+    a: "Yes! AETHER+ members can download unlimited titles in pristine 1080p and 4K quality to watch offline on mobile devices and laptops while traveling."
+  },
+  {
+    q: "How does the in-stream fashion & merchandise store work?",
+    a: "Our curated wardrobe integration highlights the exact clothing and accessories worn by characters in films. You can directly browse verified Amazon and Flipkart collections with one tap."
   }
 ];
 
@@ -326,5 +632,14 @@ export const GENRES = [
 export const ALL_ITEMS = [
   FEATURED_HERO,
   ...CONTINUE_WATCHING,
-  ...TRENDING_MOVIES
+  ...TRENDING_MOVIES,
+  ...TOP_10_MOVIES.map(m => ({
+    ...m,
+    synopsis: `${m.title} is currently ranked #${m.rank} nationwide on STREAMMI+. Stream now in pristine ${m.quality}.`
+  })),
+  ...AWARD_WINNERS.map(m => ({
+    ...m,
+    match: "98%",
+    quality: "4K HDR"
+  }))
 ];

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { AppNavBar } from '../components/AppNavBar';
 import { ShoppingLinks } from '../components/ShoppingLinks';
-import { ALL_ITEMS } from '../data/moviesData';
+import { ALL_ITEMS, FALLBACK_POSTER } from '../data/moviesData';
 
 export const SeriesScreen = () => {
   const navigate = useNavigate();
@@ -66,6 +66,8 @@ export const SeriesScreen = () => {
                 <img
                   src={item.image || item.backdrop}
                   alt={item.title}
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = FALLBACK_POSTER; }}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>

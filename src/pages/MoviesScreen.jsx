@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { AppNavBar } from '../components/AppNavBar';
 import { ShoppingLinks } from '../components/ShoppingLinks';
-import { ALL_ITEMS, GENRES } from '../data/moviesData';
+import { ALL_ITEMS, GENRES, FALLBACK_POSTER } from '../data/moviesData';
 
 export const MoviesScreen = () => {
   const navigate = useNavigate();
@@ -115,6 +115,8 @@ export const MoviesScreen = () => {
                 <img
                   src={item.image || item.backdrop}
                   alt={item.title}
+                  onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = FALLBACK_POSTER; }}
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-2 right-2 bg-surface/85 backdrop-blur-md px-1.5 py-0.5 rounded font-meta-mono text-[10px] text-primary font-bold">

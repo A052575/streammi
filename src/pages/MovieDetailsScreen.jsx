@@ -455,7 +455,7 @@ export const MovieDetailsScreen = () => {
                     title: "Solaris Echo",
                     year: "2023",
                     match: "96%",
-                    img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDh29d7EyPruKLbrwzCkSlnigE3yHufZcrTCxwD_8Hcs6xbKb8260Crl6ZxQ_M0_Bskmh2utIb162Fxrj6EwqleVe_BBs9hu7QybOJcpjTAwbl-7DcjI_AFP5d_Ljy5sIu5MvspLvcGBH2W2Vss0J62a-3140UpDlj02BztMMXfx_JtxV_6OqGExjJ7tf3lqid0Qrr9S_ooL9BT7hieJwM5iWpgIRSnM9rgniV9D7tfR4C6mP4FT4nog"
+                    img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
                   },
                   {
                     title: "Causality",

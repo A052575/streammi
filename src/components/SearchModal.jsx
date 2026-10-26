@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { ShoppingLinks } from './ShoppingLinks';
+import { FALLBACK_POSTER } from '../data/moviesData';
 
 export const SearchModal = () => {
   const { isSearchOpen, setIsSearchOpen, searchQuery, setSearchQuery, allItems } = useApp();
@@ -120,6 +121,8 @@ export const SearchModal = () => {
                     <img
                       src={item.image || item.backdrop}
                       alt={item.title}
+                      onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = FALLBACK_POSTER; }}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform"
                     />
                   </div>

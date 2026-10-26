@@ -22,6 +22,19 @@ export const PlayerScreen = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   const speeds = ['1.0x', '1.25x', '1.5x', '0.75x'];
+  const speedValues = [1.0, 1.25, 1.5, 0.75];
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = speedValues[playbackSpeedIdx];
+    }
+  }, [playbackSpeedIdx]);
 
   // Handle Play/Pause
   const togglePlay = () => {
@@ -106,10 +119,29 @@ export const PlayerScreen = () => {
         <div className="flex flex-col w-full relative overflow-hidden">
           {/* Central Cinematic Viewport Layer */}
           <div className="relative w-full aspect-[9/16] sm:aspect-[21/9] max-h-[820px] overflow-hidden flex flex-col justify-between bg-black">
-            {/* Visual backdrop still / video container */}
-            <div
-              className="absolute inset-0 bg-cover bg-center z-0 scale-105 transition-transform duration-1000 ease-out"
-              style={{ backgroundImage: `url('${FEATURED_HERO.playerBackdrop}')` }}
+            {/* Actual Ultra-Lightweight Video Stream */}
+            <video
+              ref={videoRef}
+              src={FEATURED_HERO.videoUrl}
+              poster={FEATURED_HERO.playerBackdrop}
+              className="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-700"
+              playsInline
+              autoPlay
+              muted={isMuted}
+              loop
+              onTimeUpdate={() => {
+                if (videoRef.current && videoRef.current.duration) {
+                  const curr = videoRef.current.currentTime;
+                  const dur = videoRef.current.duration;
+                  const pct = ((curr / dur) * 100).toFixed(1);
+                  setProgress(pct);
+                  const mins = String(Math.floor(curr / 60)).padStart(2, '0');
+                  const secs = String(Math.floor(curr % 60)).padStart(2, '0');
+                  setCurrentTime(`00:${mins}:${secs}`);
+                }
+              }}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
             />
             
             {/* Directional Vignettes & Scrims */}
